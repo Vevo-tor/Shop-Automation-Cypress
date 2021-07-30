@@ -1,4 +1,4 @@
-require('../variables/global');
+const val = require('../variables/values');
 module.exports = class DocumentListPO {
 
     addItems(n) {
@@ -33,19 +33,19 @@ module.exports = class DocumentListPO {
     register() {
         cy.url().should('include', "account-creation").then(() => {
             cy.get('#id_gender1').click();
-            cy.get('#customer_firstname').type('Thor');
-            cy.get('#customer_lastname').type('Ber');
-            cy.get('#passwd').type('test321');
-            cy.get('#days').select('27');
-            cy.get('#months').select('1');
-            cy.get('#years').select('2000');
-            cy.get('#address1').type('S.Staneviciaus g. 15');
-            cy.get('#id_state').select('Kansas');
-            cy.get('#id_country').should('contain', 'United States');
-            cy.get('#city').type('Vilnius');
-            cy.get('#postcode').type('12345');
-            cy.get('#phone_mobile').type('+37069403143');
-            cy.get('#alias').type('test');
+            cy.get('#customer_firstname').type(val.name);
+            cy.get('#customer_lastname').type(val.surname);
+            cy.get('#passwd').type(val.password);
+            cy.get('#days').select(val.dd);
+            cy.get('#months').select(val.mm);
+            cy.get('#years').select(val.yyyy);
+            cy.get('#address1').type(val.myAddress);
+            cy.get('#id_state').select(val.myState);
+            cy.get('#id_country').should('contain', val.myCountry);
+            cy.get('#city').type(val.myCity);
+            cy.get('#postcode').type(val.myPostcode);
+            cy.get('#phone_mobile').type(val.myPhoneNumber);
+            cy.get('#alias').type(val.addressName);
             cy.get('#submitAccount > span').click();
         })
     }

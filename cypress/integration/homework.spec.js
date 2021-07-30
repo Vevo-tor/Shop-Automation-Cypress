@@ -1,4 +1,3 @@
-require('../support/variables/global');
 const DocumentListPO = require('../support/pageObjects/document-list-pages');
 const po = new DocumentListPO;
 beforeEach(() => {
