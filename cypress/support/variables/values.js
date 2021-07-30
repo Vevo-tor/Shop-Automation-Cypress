@@ -11,5 +11,5 @@ module.exports = {
     myCity: 'Wichita',
     myPostcode: '12345',
     myPhoneNumber: '+37064040120',
-    addressName: 'Test'
+    addressAlias: 'Test'
 }
