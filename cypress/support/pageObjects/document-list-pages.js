@@ -102,4 +102,10 @@ module.exports = class DocumentListPO {
     getRegisterBtn() {
         return cy.get('#submitAccount > span')
     }
+    getEmailLoginField(){
+        return cy.get('#email');
+    }
+    getLoginBtn(){
+        return cy.get('#SubmitLogin > span');
+    }
 }

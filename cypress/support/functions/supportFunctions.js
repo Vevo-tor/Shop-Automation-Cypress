@@ -9,28 +9,9 @@ module.exports = class supportFunctions {
         po.getModalProceedBtn().click();
     }
 
-    proceedToCheckout() {
-        po.getProceedToCheckoutBtn().click();
-        po.getCreateEmailField().type('randomBoyTestingEmail23213@gmail.com');
-        po.getCreateAccountBtn().click();
-        cy.wait(3000);
-        cy.get('body').then((el) => {
-            if (el.find('.alert')) {
-                this.login();
-            } else {
-                this.register()
-            }
-        })
-
-        po.getProceedToCheckoutBtn().click();
-        po.getTermsOfService().click();
-        po.getProceedToCheckoutBtn().click();
-        po.getBankwireOption().click();
-        //po. getPayByCheckOption().click();
-        po.getProceedToCheckoutBtn().click();
-        cy.wait(3000);
-        this.purchaseSuccessful();
-    }
+    // proceedToCheckout() {
+        
+    // }
 
     register() {
         cy.url().should('include', "account-creation").then(() => {
@@ -53,9 +34,9 @@ module.exports = class supportFunctions {
     }
 
     login() {
-        cy.get('#email').type('randomTestingEmail@gmail.com');
-        cy.get('#passwd').type('test321');
-        cy.get('#SubmitLogin > span').click();
+        po.getEmailLoginField().type('randomTestingEmail@gmail.com');
+        po.getPasswordField().type('test321');
+        po.getLoginBtn().click();
     }
 
     purchaseSuccessful() {

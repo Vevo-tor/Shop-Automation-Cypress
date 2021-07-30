@@ -1,4 +1,5 @@
 module.exports = {
+    email: "randomBoyTestingEmail23213@gmail.com",
     name: "Thor",
     surname: "Ber",
     password: "test321",
