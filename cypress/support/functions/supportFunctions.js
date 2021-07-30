@@ -1,7 +1,8 @@
 const DocumentListPO = require('../pageObjects/document-list-pages');
 const po = new DocumentListPO;
 module.exports = class supportFunctions {
-
+    
+    // Passes parameter of nth product
     addItemsToCart(n) {
         po.getAddToCartBtn(n).click();
         cy.wait(4000);

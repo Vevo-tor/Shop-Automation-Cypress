@@ -2,6 +2,7 @@ const DocumentListPO = require('../support/pageObjects/document-list-pages');
 const po = new DocumentListPO;
 const SupportFunctions = require('../support/functions/supportFunctions');
 const fu = new SupportFunctions;
+require('../support/variables/values');
 beforeEach(() => {
     cy.clearCookies();    
 });
