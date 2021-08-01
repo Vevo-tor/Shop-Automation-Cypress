@@ -2,7 +2,8 @@ const DocumentListPO = require('../support/pageObjects/document-list-pages');
 const po = new DocumentListPO;
 const SupportFunctions = require('../support/functions/supportFunctions');
 const fu = new SupportFunctions;
-require('../support/variables/values');
+const val = require ('../support/variables/accountInformation');
+require('../support/variables/accountInformation');
 beforeEach(() => {
     cy.clearCookies();    
 });
@@ -12,7 +13,7 @@ describe('automation practice eshop', () => {
         cy.visit("/");
         fu.addItemsToCart(3);
         po.getProceedToCheckoutBtn().click();
-        po.getCreateEmailField().type(email);
+        po.getCreateEmailField().type(val.email);
         po.getCreateAccountBtn().click();
         cy.wait(3000);
         cy.get('body').then((el) => {

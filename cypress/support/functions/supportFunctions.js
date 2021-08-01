@@ -1,5 +1,6 @@
 const DocumentListPO = require('../pageObjects/document-list-pages');
 const po = new DocumentListPO;
+const val = require('../variables/accountInformation');
 module.exports = class supportFunctions {
     
     // Passes parameter of nth product
@@ -41,6 +42,6 @@ module.exports = class supportFunctions {
     }
 
     purchaseSuccessful() {
-        po.getPurchaseSuccessfulMessage().should('be.visible');
+        po.getSuccessMessageContainer().should('be.visible').should('contain', 'Your order on My Store is complete');
     }
 }

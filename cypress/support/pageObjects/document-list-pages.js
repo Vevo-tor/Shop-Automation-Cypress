@@ -35,10 +35,6 @@ module.exports = class DocumentListPO {
         return cy.get('.cheque');
     }
 
-    getPurchaseSuccessfulMessage() {
-        return cy.get('.box').contains('Your order on my store is complete', { matchCase: false });
-    }
-
     getSelectGenderMale() {
         return cy.get('#id_gender1');
     }
@@ -107,5 +103,8 @@ module.exports = class DocumentListPO {
     }
     getLoginBtn(){
         return cy.get('#SubmitLogin > span');
+    }
+    getSuccessMessageContainer(){
+        return cy.get('.box');
     }
 }
