@@ -2,18 +2,14 @@ const DocumentListPO = require('../pageObjects/document-list-pages');
 const po = new DocumentListPO;
 const val = require('../variables/accountInformation');
 module.exports = class supportFunctions {
-    
+
     // Passes parameter of nth product
     addItemsToCart(n) {
         po.getAddToCartBtn(n).click();
-        cy.wait(4000);
         po.getAddedToCartPopup().should('be.visible');
         po.getModalProceedBtn().click();
     }
 
-    // proceedToCheckout() {
-        
-    // }
 
     register() {
         cy.url().should('include', "account-creation").then(() => {
@@ -35,13 +31,15 @@ module.exports = class supportFunctions {
         })
     }
 
-    login() {
-        po.getEmailLoginField().type('randomTestingEmail@gmail.com');
-        po.getPasswordField().type('test321');
-        po.getLoginBtn().click();
-    }
+    // login() {
+    //     po.getEmailLoginField().type(val.email);
+    //     po.getPasswordField().type(val.password);
+    //     po.getLoginBtn().click();
+    // }
 
     purchaseSuccessful() {
-        po.getSuccessMessageContainer().should('be.visible').should('contain', 'Your order on My Store is complete');
+        po.getSuccessMessageContainer()
+            .should('be.visible')
+            .should('contain', 'Your order on My Store is complete');
     }
 }

@@ -23,3 +23,11 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+const DocumentListPO = require('./pageObjects/document-list-pages');
+const po = new DocumentListPO;
+const val = require('./variables/accountInformation');
+Cypress.Commands.add('login', ()=>{
+    po.getEmailLoginField().type(val.email);
+    po.getPasswordField().type(val.password);
+    po.getLoginBtn().click();
+})

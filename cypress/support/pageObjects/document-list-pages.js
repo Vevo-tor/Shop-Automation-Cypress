@@ -1,6 +1,6 @@
 module.exports = class DocumentListPO {
     getAddToCartBtn(n) {
-        return cy.get('#homefeatured > :nth-child(' + n + ')').contains("Add to cart");
+        return cy.get('#homefeatured > :nth-child(' + n + ')').trigger('mouseover').contains("Add to cart");
     }
     
     getAddedToCartPopup() {
