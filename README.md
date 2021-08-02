@@ -61,8 +61,8 @@ or
 
 <br>
 
-Added a workflow where tests run automatically as schedules. **At 03:00 on every day-of-week from Monday through Friday**. Can be found in **Github > Workflows > scheduled.yml**
+Added a workflow where tests run automatically as schedules. **At 03:00 on every work day of the week from Monday through Friday**. Can be found in **Github > Workflows > scheduled.yml**
 
 <br>
 
-Added an additional workflow that test run on merge to see whether any changes impacted the tests. Can be found in **Github > Workflows > merge.yml**
+Added an additional workflow that tests run on merge to see whether any changes impacted the tests. Can be found in **Github > Workflows > merge.yml**
