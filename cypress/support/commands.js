@@ -39,3 +39,16 @@ Cypress.Commands.add('purchaseSuccessful', () => {
         .should('be.visible')
         .should('contain', 'Your order on My Store is complete');
 })
+
+Cypress.Commands.add('checkIfEmailTaken', () =>{
+    po.getCreateAccountBtn().click().then(() => {
+        cy.request('POST');
+        cy.get('body').then((el) => {
+            if (el.find('.alert').is(':visible')) {
+                cy.login();
+            } else {
+                cy.register();
+            }
+        })
+    })
+})

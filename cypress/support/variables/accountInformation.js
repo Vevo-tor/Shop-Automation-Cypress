@@ -1,5 +1,4 @@
 module.exports = {
-    nth: 3, // nth item to add to cart
     email: "testingEmail321@gmail.com",
     name: "Thor",
     surname: "Test",
@@ -13,5 +12,6 @@ module.exports = {
     myCity: 'Wichita',
     myPostcode: '12345',
     myPhoneNumber: '+37064040120',
-    addressAlias: 'Test'
+    addressAlias: 'Test',
+    nth: 3 // nth item to add to cart
 }

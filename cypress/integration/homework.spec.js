@@ -11,15 +11,7 @@ describe('automation practice eshop', () => {
         cy.addToCart(val.nth);
         po.getProceedToCheckoutBtn().click();
         po.getCreateEmailField().type(val.email);
-        po.getCreateAccountBtn().click();
-        cy.get('body').then((el) => {
-            if (el.find('.alert-danger').is(':visible')) {
-                cy.login();
-            } else {
-                cy.register();
-            }
-        })
-
+        cy.checkIfEmailTaken();
         po.getProceedToCheckoutBtn().click();
         po.getTermsOfService().click();
         po.getProceedToCheckoutBtn().click();
