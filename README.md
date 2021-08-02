@@ -1,7 +1,6 @@
 # Test automation homework Interview
 ## Getting started:  
 ---
-<br>
 
 ### **Installation**:
 
@@ -26,6 +25,7 @@
 <br> 
 
 ### **How to use**:
+
 <br>
 
 If you would like to modify any values, you can find them all in **Cypress > Support > Variables > accountInformation.js**
@@ -43,18 +43,25 @@ To run tests in headless mode:
 
 > npm run e2e 
 
-or
+```
+
+### or
+
+<br>
+
+```
 
 > npx cypress run
 
 ```
+
+
 <br>
 
 ---
 
-<br>
 
-## **Additional Notes**:
+## Additional Notes:
 
 <br>
 
