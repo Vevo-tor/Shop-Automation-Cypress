@@ -1,9 +1,9 @@
 module.exports = {
     nth: 3, // nth item to add to cart
-    email: "randomBoyTestingEmail23213@gmail.com",
+    email: "testingEmail321@gmail.com",
     name: "Thor",
-    surname: "Ber",
-    password: "test321",
+    surname: "Test",
+    password: "test135",
     dd: '27',
     mm: '1',
     yyyy: '2000',

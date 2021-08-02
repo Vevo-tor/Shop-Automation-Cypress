@@ -13,7 +13,7 @@ describe('automation practice eshop', () => {
         po.getCreateEmailField().type(val.email);
         po.getCreateAccountBtn().click();
         cy.get('body').then((el) => {
-            if (el.find('.alert')) {
+            if (el.find('.alert-danger').is(':visible')) {
                 cy.login();
             } else {
                 cy.register();

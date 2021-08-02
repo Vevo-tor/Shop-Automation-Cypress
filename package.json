@@ -18,7 +18,6 @@
   },
   "homepage": "https://github.com/Vevo-tor/Test-automation-homework-Interview#readme",
   "dependencies": {
-    "cypress": "^8.1.0",
-    "cypress-wait-until": "^1.7.1"
+    "cypress": "^8.1.0"
   }
 }
