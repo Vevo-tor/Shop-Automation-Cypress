@@ -44,10 +44,7 @@ To run tests in headless mode:
 > npm run e2e 
 
 ```
-
-### or
-
-
+or
 
 ```
 
