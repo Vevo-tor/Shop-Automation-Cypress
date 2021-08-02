@@ -2,14 +2,15 @@ const DocumentListPO = require('./pageObjects/document-list-pages');
 const po = new DocumentListPO;
 const val = require('./variables/accountInformation');
 
+import 'cypress-wait-until';
 
-Cypress.Commands.add('login', ()=>{
+Cypress.Commands.add('login', () => {
     po.getEmailLoginField().type(val.email);
     po.getPasswordField().type(val.password);
     po.getLoginBtn().click();
 })
 
-Cypress.Commands.add('register', ()=>{
+Cypress.Commands.add('register', () => {
     cy.url().should('include', "account-creation").then(() => {
         po.getSelectGenderMale().click();
         po.getFirstNameField().type(val.name);
@@ -29,14 +30,24 @@ Cypress.Commands.add('register', ()=>{
     })
 })
 
-Cypress.Commands.add('addToCart', (n)=>{
-    po.getAddToCartBtn(n).click();
-    po.getAddedToCartPopup().should('be.visible');
+Cypress.Commands.add('addToCart', (n) => {
+    po.getAddToCartBtn(n).click().then(() => {
+        cy.intercept({
+            method: "POST"
+        }).as("data");
+        cy.wait('@data');
+        po.getAddedToCartPopup().should('be.visible');
+        po.getModalProceedBtn().click()
+    });
+
+
+    // po.getAddedToCartPopup().should('be.visible');
+
     po.getModalProceedBtn().click();
 })
 
-Cypress.Commands.add('purchaseSuccessful', ()=>{
+Cypress.Commands.add('purchaseSuccessful', () => {
     po.getSuccessMessageContainer()
-            .should('be.visible')
-            .should('contain', 'Your order on My Store is complete');
+        .should('be.visible')
+        .should('contain', 'Your order on My Store is complete');
 })
