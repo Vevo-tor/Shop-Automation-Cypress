@@ -1,6 +1,6 @@
 # Test automation homework Interview
 ## Getting started:  
----
+
 
 ### **Installation**:
 
@@ -59,6 +59,7 @@ To run tests in headless mode:
 <br>
 
 ---
+
 
 
 ## Additional Notes:
