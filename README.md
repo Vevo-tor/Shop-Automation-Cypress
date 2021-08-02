@@ -47,7 +47,7 @@ To run tests in headless mode:
 
 ### or
 
-<br>
+
 
 ```
 
