@@ -8,7 +8,7 @@
 
 ```
 
-> Clone the reposity: git clone https://github.com/Vevo-tor/Test-automation-homework-Interview.git
+> Clone the reposity: git clone https://github.com/Vevo-tor/Shop-Automation-Cypress.git
 
 ```
 
